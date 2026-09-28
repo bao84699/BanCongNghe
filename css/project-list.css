@@ -1,0 +1,220 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 35px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    background: var(--bg);
+}
+section {
+    width: 95%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+section .left {
+    width: 451px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.left .description {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.description .kitu {
+    font-family: var(--font-m);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--blue);
+}
+.description .text {
+    font-family: var(--font-m);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--text-3);
+}
+.left .title {
+    color: var(--text);
+    font-family: var(--font-d);
+    font-weight: 700;
+    font-size: 52px;
+}
+.left .information {
+    color: var(--text-3);
+    font-family: var(--font-b);
+    font-weight: 500;
+    font-size: 16px;
+}
+section .right {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+}
+.right .item {
+    box-shadow: 0px 2px 7.2px 0px rgba(201, 209, 232, 0.5);
+    border: 0.5px solid var(--border);
+    width: 145px;
+    height: 132px;
+    border-radius: 15px;
+    padding: 12px;
+    background-color: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.item .number {
+    font-family: var(--font-d);
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--text);
+}
+.item .descript {
+    font-family: var(--font-b);
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--text-3);
+}
+.filter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 19px 21px;
+    box-shadow: 0px 2px 4px 0px rgba(201, 209, 232, 0.5);
+    border: 1px solid var(--border2);
+    background: var(--surface);
+    border-radius: 16px;
+}
+.filter .filter-left {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.filter-left .item {
+    font-family: var(--font-b);
+    padding: 12px 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--surface2);
+    border-radius: 12px;
+    cursor: pointer;
+    color: var(--text-2);
+    transition: background var(--trans), color var(--trans);
+}
+.filter-left .item:hover {
+    background-color: var(--surface3);
+    color: var(--text);
+}
+.item.active {
+    color: var(--surface);
+    background: var(--accent);
+}
+.filter .filter-right {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+select:focus {
+    outline: none;
+}
+.filter-right select {
+    font-family: var(--font-b);
+    color: var(--text-2);
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    padding: 12px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.filter-right .search {
+    border: 1px solid var(--border2);
+    background: var(--surface);
+    width: 194px;
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    padding: 12px 14px;
+    border-radius: 12px;
+    justify-content: space-between;
+    align-items: center;
+}
+.search input {
+    width: 120px;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    font-family: var(--font-b);
+}
+input:focus {
+    outline: none;
+}
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-3);
+}
+.search svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+}
+.page.active {
+    color: var(--surface);
+    background: var(--accent);
+}
+.prev.active {
+    color: var(--surface);
+    background: var(--accent);
+}
+.next.active {
+    color: var(--surface);
+    background: var(--accent);
+}
+.prev, .next, .page {
+    border: 1px solid var(--border2);
+    background: var(--surface);
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-3);
+    font-family: var(--font-b);
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background var(--trans), color var(--trans);
+}
+.prev:hover, .next:hover, .page:hover {
+    background: var(--surface2);
+    color: var(--text-2);
+}
+.prev, .next {
+    width: 80px;
+}
+
+

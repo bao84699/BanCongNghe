@@ -1,0 +1,133 @@
+/* ── Footer always dark — override theme variables ── */
+#footer {
+    --font-d: 'Lexend', sans-serif;
+    --font-b: 'DM Sans', sans-serif;
+    --font-m: 'JetBrains Mono', monospace;
+    --trans: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer {
+    background: #22232e;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 36px 0 24px;
+}
+
+/* max-width wrapper bên trong footer */
+.footer-inner {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 32px;
+    margin-bottom: 28px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 10px;
+}
+
+/* Logo mark — always white bg with dark text */
+#footer .logo-mark {
+    width: 28px;
+    height: 28px;
+    color: #22232e;
+    font-family: var(--font-d);
+    font-size: 10px;
+    font-weight: 600;
+    background: #ffffff;
+    border-radius: 7px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+/* Logo text inside dark footer */
+#footer .logo-name {
+    font-family: var(--font-d);
+    font-size: 14px;
+    font-weight: 800;
+    color: #eeeef4;
+    letter-spacing: 0.03em;
+}
+
+#footer .logo-sub {
+    font-family: var(--font-m);
+    font-size: 9px;
+    color: #5a5a78;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: -1px;
+}
+
+.footer-desc {
+    font-family: var(--font-b);
+    font-size: 12px;
+    color: #5a5a78;
+    line-height: 1.65;
+    max-width: 210px;
+}
+
+.footer-col-title {
+    font-family: var(--font-d);
+    font-size: 11px;
+    font-weight: 700;
+    color: #9898b8;
+    margin-bottom: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.footer-links a {
+    font-family: var(--font-b);
+    font-size: 12px;
+    color: #5a5a78;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color var(--trans);
+}
+
+.footer-links a:hover {
+    color: #9898b8;
+}
+
+.footer-info {
+    font-family: var(--font-b);
+    font-size: 12px;
+    color: #5a5a78;
+    line-height: 1.8;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-copy {
+    font-family: var(--font-m);
+    font-size: 11px;
+    color: #5a5a78;
+}
+
+.footer-emblem {
+    opacity: 0.07;
+    color: #9898b8;
+}

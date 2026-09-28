@@ -1,0 +1,218 @@
+#header {
+    --bg: rgba(34, 35, 46, 0.92);
+    --surface: #22232e;
+    --surface2: rgba(255, 255, 255, 0.08);
+    --border: rgba(255, 255, 255, 0.08);
+    --text: #ffffff;
+    --text-2: rgba(255, 255, 255, 0.7);
+    --text-3: rgba(255, 255, 255, 0.4);
+    --accent: #ffffff;
+
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+.navbar {
+    background: var(--bg);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    height: 54px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+}
+
+/* Giới hạn nội dung navbar ở max 1200px như các section */
+.navbar-inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+#header .logo-mark {
+    width: 32px;
+    height: 32px;
+    color: var(--surface);
+    font-family: var(--font-d);
+    font-size: 12px;
+    font-weight: 600;
+    background: var(--accent);
+    border-radius: 7px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+.logo-mark svg {
+    color: #13131a;
+}
+
+.logo-name {
+    font-family:var(--font-d);
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: 0.03em;
+}
+
+.logo-sub {
+    font-family:var(--font-m);
+    font-size: 9px;
+    color: var(--text-3);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: -1px;
+}
+
+.nav-mid {
+    display: flex;
+    gap: 2px;
+    flex: 1;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-mid a {
+    display: block;
+    padding: 5px 13px;
+    text-decoration: none;
+    font-family:var(--font-b);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-2);
+    border-radius: 6px;
+    transition: all var(--trans);
+    letter-spacing: 0.01em;
+    position: relative;
+}
+
+.nav-mid a:hover {
+    color: var(--text);
+    background: var(--surface2);
+}
+
+.nav-mid a.active {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.nav-mid a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -13px;
+    left: 12px;
+    right: 12px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px 2px 0 0;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+}
+
+.nav-icon-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    border: 1px solid var(--border);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    color: var(--text-3);
+    transition: all var(--trans);
+    position: relative;
+}
+
+.nav-icon-btn:hover {
+    background: var(--surface2);
+    color: var(--text-2);
+    border-color: var(--border2);
+}
+
+.nav-icon-btn .dot {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 5px;
+    height: 5px;
+    background: #ef4444;
+    border-radius: 50%;
+    border: 1px solid var(--bg);
+}
+
+.user-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px 4px 4px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    cursor: pointer;
+    background: transparent;
+    margin-left: 4px;
+    transition: all var(--trans);
+}
+
+.user-pill:hover {
+    background: var(--surface2);
+    border-color: var(--border2);
+}
+
+.user-ava {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d0d0d8, #b0b0bc);
+    display: grid;
+    place-items: center;
+    font-family:var(--font-d);
+    font-size: 10px;
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: 0.02em;
+}
+
+.user-pill-name {
+    font-family:var(--font-b);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.user-pill-lv {
+    font-family:var(--font-b);
+    font-size: 10px;
+    color: var(--text-3);
+}
+
+.caret {
+    color: var(--text-3);
+    margin-left: 2px;
+}
+
+.scroll-progress {
+    position: fixed;
+    top: 54px;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #7c6af7, #3d7fe8);
+    width: 0%;
+    z-index: 300;
+    transition: width 0.08s linear;
+}

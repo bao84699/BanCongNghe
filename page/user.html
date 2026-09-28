@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/citymap.css">
+    <title>Thành Viên — BCN · IUH</title>
+</head>
+<body>
+    <div id="header"></div>
+    <script src="../component/header.js"></script>
+    <main>
+        <section class="hero-banner">
+            <div class="hero-bg"></div>
+            <div class="hero-content container" style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 24px;">
+                <div class="hero-text">
+                    <div class="hero-label">// BCN - MEMBER DIRECTORY</div>
+                    <h1 class="hero-title">Thành Phố BCA</h1>
+                    <p class="hero-sub">Mỗi căn nhà là một thành viên — càng lớn, càng nổi bật</p>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-n" id="stat-members">42</span>
+                        <span class="stat-l">THÀNH VIÊN</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-n" style="color: #2bb5ac;">25</span>
+                        <span class="stat-l">ONLINE</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-n">286</span>
+                        <span class="stat-l">DỰ ÁN</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="citymap-section">
+            <div class="citymap-content">
+                <div class="citymap-filter-bar">
+                    <div class="cf-search">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" id="cf-search-input" placeholder="Tìm kiếm thành viên, kỹ năng...">
+                    </div>
+                    
+                    <div class="cf-divider"></div>
+                    
+                    <!-- Role -->
+                    <div class="cf-group">
+                        <span class="cf-label">VAI TRÒ</span>
+                        <button class="cf-btn active" data-role="all">Tất cả</button>
+                        <button class="cf-btn" data-role="Leader">Leader</button>
+                        <button class="cf-btn" data-role="Designer">Designer</button>
+                        <button class="cf-btn" data-role="Dev">Dev</button>
+                    </div>
+                    
+                    <div class="cf-divider"></div>
+                    
+                    <!-- Rank -->
+                    <div class="cf-group">
+                        <span class="cf-label">RANK</span>
+                        <button class="cf-btn" data-rank="1" style="color: #c09030; font-weight: 600;">Gold</button>
+                        <button class="cf-btn" data-rank="2" style="color: #6a8898; font-weight: 600;">Silver</button>
+                        <button class="cf-btn active" data-rank="all">Tất cả</button>
+                    </div>
+                    
+                    <div class="cf-divider"></div>
+                    
+                    <!-- Sort -->
+                    <div class="cf-sort">
+                        <select id="cf-sort-select">
+                            <option value="level">Level cao nhất</option>
+                            <option value="projects">Dự án nhiều nhất</option>
+                            <option value="exp">EXP cao nhất</option>
+                        </select>
+                        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    
+                    <!-- Reset -->
+                    <button id="cf-reset-btn">
+                        <svg class="reset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6M1 20v-6h6"></path><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                        <span>RESET</span>
+                    </button>
+                </div>
+                <div class="citymap-wrap">
+                    <div class="citymap-grid" id="citymap-grid"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+    <script src="../component/footer.js"></script>
+    <script src="../component/citymap.js"></script>
+</body>
+</html>

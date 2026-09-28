@@ -1,0 +1,656 @@
+/* --- Hero Banner --- */
+.hero-banner {
+    position: relative;
+    padding: 24px 0 12px 0;
+    background: transparent;
+}
+.hero-bg {
+    display: none;
+}
+.hero-content {
+    position: relative; z-index: 2;
+    padding: 24px 0;
+}
+.hero-label {
+    font-family: var(--font-m); font-size: 11px;
+    letter-spacing: 0.1em; color: var(--text-3); margin-bottom: 8px;
+    font-weight: 500;
+}
+.hero-title {
+    font-family: var(--font-d);
+    font-size: 32px; font-weight: 800;
+    color: var(--text); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 8px;
+}
+.hero-sub {
+    font-family: var(--font-b);
+    font-size: 14px; color: var(--text-3);
+    max-width: 500px; line-height: 1.6;
+}
+.hero-stats { display:flex; align-items:center; gap:16px; }
+.stat-card {
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    min-width: 100px;
+    border: 1px solid var(--border2);
+}
+.stat-card .stat-n {
+    font-family: var(--font-d); font-size: 26px; font-weight: 800;
+    color: var(--text); line-height: 1;
+}
+.stat-card .stat-l {
+    font-size: 10px; color: var(--text-3);
+    font-family: var(--font-m); text-transform: uppercase; letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+
+/* --- Section & Filter --- */
+.citymap-section { background: var(--bg); padding-bottom: 80px; padding-top: 30px; }
+
+/* Wrapper căn giữa dùng chung cho filter và grid */
+.citymap-content {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+/* --- Filter Bar --- */
+.citymap-filter-bar {
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 16px;
+    padding: 8px 14px;
+    margin: 20px 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.cf-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--surface2);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    padding: 0 12px;
+    height: 36px;
+    flex: 2;
+    min-width: 180px;
+}
+
+.cf-search .search-icon {
+    width: 14px;
+    height: 14px;
+    color: var(--text-3);
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.cf-search input {
+    border: none;
+    background: transparent;
+    font-family: var(--font-b);
+    font-size: 12px;
+    color: var(--text);
+    outline: none;
+    width: 100%;
+}
+
+.cf-search input::placeholder {
+    color: var(--text-3);
+}
+
+.cf-divider {
+    width: 1px;
+    height: 20px;
+    background: var(--border2);
+    flex-shrink: 0;
+}
+
+.cf-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.cf-label {
+    font-family: var(--font-m);
+    font-size: 8px;
+    color: var(--text-3);
+    letter-spacing: 0.1em;
+    margin-right: 4px;
+    text-transform: uppercase;
+}
+
+.cf-btn {
+    height: 30px;
+    padding: 0 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    font-size: 11px;
+    font-weight: 500;
+    font-family: var(--font-b);
+    color: var(--text-2);
+    cursor: pointer;
+    transition: background var(--trans), color var(--trans), border-color var(--trans);
+    white-space: nowrap;
+}
+
+.cf-btn:hover {
+    background: var(--surface3);
+    color: var(--text);
+    border-color: var(--border2);
+}
+
+.cf-btn.active {
+    background: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: var(--surface) !important;
+}
+
+.cf-sort {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--surface2);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    height: 36px;
+    padding: 0 12px;
+    flex-shrink: 0;
+}
+
+.cf-sort select {
+    border: none;
+    background: transparent;
+    font-family: var(--font-b);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-2);
+    outline: none;
+    appearance: none;
+    padding-right: 18px;
+    cursor: pointer;
+}
+
+.cf-sort .chevron-icon {
+    position: absolute;
+    right: 10px;
+    width: 12px;
+    height: 12px;
+    color: var(--text-3);
+    pointer-events: none;
+}
+
+#cf-reset-btn {
+    height: 36px;
+    padding: 0 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: var(--font-b);
+    color: var(--text-2);
+    cursor: pointer;
+    transition: background var(--trans), color var(--trans);
+    flex-shrink: 0;
+}
+
+#cf-reset-btn:hover {
+    background: var(--surface3);
+    color: var(--text);
+}
+
+#cf-reset-btn .reset-icon {
+    width: 12px;
+    height: 12px;
+}
+
+/* --- Grid wrapper --- */
+.citymap-wrap {
+    width: 100%;
+    padding: 8px 0;
+}
+
+/* Grid container — absolute positioning, height set by JS */
+.citymap-grid {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+}
+
+/* ===================================================
+   MEMBER CARD — Dark Theme
+   =================================================== */
+.mcard {
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #16161f;
+    border: 0.5px solid color-mix(in srgb, var(--tier-fg) 65%, transparent);
+    transition: transform 0.22s ease, border-color 0.22s ease;
+    box-sizing: border-box;
+}
+.mcard:hover {
+    transform: translateY(-3px) scale(1.012);
+    border-color: var(--tier-fg);
+    z-index: 20;
+}
+
+/* ── Avatar Wrapper & Star Badge & Online Indicator ── */
+.mc-avatar-wrap {
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+    overflow: visible !important;
+}
+.mc-top-row-wide .mc-avatar-wrap,
+.mc-right-big .mc-avatar-wrap {
+    margin-top: 4px;
+    margin-right: 4px;
+}
+
+.mc-online {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #555566;
+    border: 2px solid #16161f;
+    z-index: 12;
+    box-sizing: content-box !important;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+.mc-online.is-online {
+    background: #00d4aa;
+    box-shadow: 0 0 6px rgba(0, 212, 170, 0.7);
+}
+
+.mc-star {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    background: #c09030; /* gold-brown rank bg */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+.mc-star svg {
+    width: 8px;
+    height: 8px;
+}
+
+/* ── Bottom Glowing Line ── */
+.mc-bottom-line {
+    display: none;
+}
+
+/* ── Avatar (square with rounded corners) ── */
+.mc-avatar {
+    border-radius: 8px;
+    border: 1.5px solid;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-d); font-weight: 700;
+    flex-shrink: 0; overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.mcard:hover .mc-avatar {
+    transform: scale(1.04);
+}
+
+/* ── Level badge ── */
+.mc-level {
+    height: 18px; padding: 0 6px; border-radius: 5px;
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.4);
+    font-size: 9px; font-family: var(--font-m); font-weight: 500;
+    display: flex; align-items: center;
+    border: 1px solid rgba(255,255,255,0.06);
+    letter-spacing: 0.02em;
+    flex-shrink: 0;
+}
+
+/* ── Role label (small text) ── */
+.mc-role-label {
+    font-family: var(--font-m); font-size: 8px;
+    color: rgba(255,255,255,0.3); letter-spacing: 0.06em;
+    text-transform: uppercase; margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ── Role badge (pill) ── */
+.mc-role-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 20px; padding: 0 10px; border-radius: 5px;
+    background: rgba(255,255,255,0.05);
+    color: var(--badge-color, rgba(255,255,255,0.5));
+    font-size: 9px; font-family: var(--font-m); font-weight: 500;
+    letter-spacing: 0.04em;
+    border: 1px solid rgba(255,255,255,0.06);
+    white-space: nowrap; flex-shrink: 0;
+    text-transform: uppercase;
+    margin-top: 2px;
+    width: fit-content;
+    align-self: flex-start;
+}
+
+/* ── Skills tags ── */
+.mc-skill {
+    height: 18px; padding: 0 6px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 4px;
+    font-size: 9px; font-family: var(--font-m);
+    color: rgba(255,255,255,0.4); display: flex; align-items: center;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+}
+.mcard:hover .mc-skill {
+    background: rgba(255,255,255,0.07);
+    color: rgba(255,255,255,0.55);
+}
+
+/* ── Link button ── */
+.mc-link-btn {
+    display: inline-flex; align-items: center; gap: 4px;
+    height: 24px; padding: 0 10px; border-radius: 6px;
+    background: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.4);
+    font-size: 10px; font-family: var(--font-m); font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.06);
+    opacity: 0.8;
+    transition: opacity 0.2s, background 0.15s, color 0.15s;
+    flex-shrink: 0;
+}
+.mcard:hover .mc-link-btn {
+    opacity: 1;
+}
+.mc-link-btn:hover {
+    background: var(--tier-fg);
+    color: white;
+}
+.mc-link-btn svg { width: 10px; height: 10px; }
+
+/* ── Tooltip for small 1x1 cards ── */
+.mc-tooltip {
+    position: absolute; bottom: calc(100% + 8px); left: 50%;
+    transform: translateX(-50%);
+    background: #1e1e2e; color: #e0e0ea;
+    font-size: 11px; font-family: var(--font-b);
+    padding: 6px 12px; border-radius: 8px;
+    white-space: nowrap; pointer-events: none;
+    opacity: 0; z-index: 30; transition: opacity 0.15s;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.mcard:hover .mc-tooltip { opacity: 1; }
+
+
+/* ── 1. Small Card Layout (1x1) ── */
+.mc-inner-sm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ── 2. Wide Card Layout (2x1) ── */
+.mc-inner-wide {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.mc-top-row-wide {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.mc-info-wide {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.mc-info-wide .mc-name {
+    font-family: var(--font-d);
+    font-weight: 700;
+    color: #e8e8f0;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mc-skills-wide {
+    display: flex;
+    gap: 4px;
+    margin-top: 4px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.mc-skills-wide .mc-skill {
+    height: 16px;
+    padding: 0 5px;
+    font-size: 8px;
+    border-radius: 4px;
+}
+
+.mc-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 6px 0;
+    width: 100%;
+}
+
+.mc-bottom-row-wide {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.mc-stats-wide {
+    display: flex;
+    gap: 10px;
+}
+
+.mc-stat-wide {
+    display: flex;
+    flex-direction: column;
+}
+
+.mc-stat-val {
+    font-family: var(--font-d);
+    font-size: 13px;
+    font-weight: 700;
+    color: #e0e0ea;
+    line-height: 1;
+}
+
+.mc-stat-lbl {
+    font-family: var(--font-m);
+    font-size: 7px;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+}
+
+.mc-joined-wide {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.mc-joined-code {
+    font-family: var(--font-m);
+    font-size: 7px;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.mc-joined-date {
+    font-family: var(--font-m);
+    font-size: 7px;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+
+/* ── 3. Big Card Layout (2x2) ── */
+.mc-inner-big {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.mc-top-row-big {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.mc-left-big {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+.mc-left-big .mc-name-lg {
+    font-family: var(--font-d);
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.03em;
+    color: #f0f0f8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mc-right-big {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.mc-joined-code-big {
+    font-family: var(--font-m);
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+}
+
+.mc-desc-big {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.35);
+    line-height: 1.5;
+    margin-top: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.mc-skills-big {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.mc-skills-big .mc-skill {
+    height: 18px;
+    padding: 0 6px;
+    font-size: 9px;
+}
+
+.mc-bottom-row-big {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.mc-stats-big {
+    display: flex;
+    gap: 14px;
+}
+
+.mc-stat-big {
+    display: flex;
+    flex-direction: column;
+}
+
+.mc-stat-val-big {
+    font-family: var(--font-d);
+    font-size: 15px;
+    font-weight: 700;
+    color: #e0e0ea;
+    line-height: 1;
+}
+
+.mc-stat-lbl-big {
+    font-family: var(--font-m);
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+}
+
+
+/* Scroll on small screens */
+.citymap-wrap {
+    overflow-x: hidden;
+    width: 100%;
+}
+.citymap-grid {
+    width: 100%;
+}

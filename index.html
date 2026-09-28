@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCN — Ban Công Nghệ · IUH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/citymap.css">
+  <link rel="stylesheet" href="./css/index-dark-theme.css">
+</head>
+
+<body>
+  <!-- <div class="sprog" id="sp"></div> -->
+  <div id="header"></div>
+  <script src="./component/header.js"></script>
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-scan"></div>
+    <div class="hero-dots"></div>
+
+    <canvas id="starCanvas" class="star-canvas"></canvas>
+    <div class="hero-body">
+      <div class="hero-bottom">
+        <div>
+          <div class="hero-eyebrow">
+            <div class="pulse-pill">
+              <div class="pulse-dot"></div>
+              42 thành viên đang online
+            </div>
+          </div>
+
+          <h1 class="hero-h1">
+            Kiến tạo <span class="h-dash">----</span><br>
+            <em><span class="h-dash">----</span> tương lai</em>
+          </h1>
+
+          <p class="hero-p">
+            BCN biến hoạt động sinh viên thành game. Mỗi dự án là một nhiệm vụ. Mỗi thành viên là một nhân vật. Mỗi kỳ
+            là một mùa mới để bứt phá.
+          </p>
+          <div class="hero-actions">
+            <button class="btn-p" onclick="goto('#join')">
+              Tham gia BCN
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </button>
+            <button class="btn-g" onclick="goto('#about')">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polygon points="10 8 16 12 10 16 10 8" />
+              </svg>
+              Khám phá
+            </button>
+          </div>
+          <div class="hero-hud">
+            <div class="hud-item">
+              <div class="hud-num" id="h1">0</div>
+              <div class="hud-lbl">Thành Viên</div>
+            </div>
+            <div class="hud-item">
+              <div class="hud-num" id="h2">0</div>
+              <div class="hud-lbl">Dự Án</div>
+            </div>
+            <div class="hud-item">
+              <div class="hud-num" id="h3">0</div>
+              <div class="hud-lbl">Năm HĐ</div>
+            </div>
+            <div class="hud-item">
+              <div class="hud-num" id="h4">0</div>
+              <div class="hud-lbl">Sự Kiện</div>
+            </div>
+
+            <div class="hud-notch-wrap">
+              <svg width="180" height="10" viewBox="0 0 180 10" preserveAspectRatio="none" class="hud-notch-svg">
+                <path d="M0,1 L12,9 L168,9 L180,1" fill="transparent" stroke="#34a8e0" stroke-width="2" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side: BCN logo + Role cards -->
+        <div class="hero-right">
+          <div class="hero-bcn-scene">
+            <img src="Pictures/BCN.svg" alt="" class="hero-bcn-bg bg-5">
+            <img src="Pictures/BCN.svg" alt="" class="hero-bcn-bg bg-4">
+            <img src="Pictures/BCN.svg" alt="" class="hero-bcn-bg bg-3">
+            <img src="Pictures/BCN.svg" alt="" class="hero-bcn-bg bg-2">
+            <img src="Pictures/BCN.svg" alt="" class="hero-bcn-bg bg-1">
+            <img src="Pictures/BCN.svg" alt="BCN Logo" class="hero-bcn-logo">
+          </div>
+          <div class="hero-role-grid">
+            <div class="mcard mcard-wide hero-mcard hero-mcard-qb">
+              <span class="mc-star"><svg viewBox="0 0 24 24" fill="currentColor" width="10" height="10">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg></span>
+              <div class="mc-inner-wide">
+                <div class="mc-top-row-wide">
+                  <div class="mc-avatar-wrap">
+                    <div class="mc-avatar">QB</div>
+                    <span class="mc-online is-online"></span>
+                  </div>
+                  <div class="mc-info-wide" >
+                    <div class="mc-name">Phạm Quốc Bảo</div>
+                    <div class="mc-role-label">Team Leader</div>
+                  </div>
+                  <span class="mc-level">Lv28</span>
+                </div>
+                <div class="mc-skills-wide">
+                  <span class="mc-skill">Management</span><span class="mc-skill">Fullstack</span><span
+                    class="mc-skill">System</span>
+                </div>
+                <div class="mc-divider"></div>
+                <div class="mc-bottom-row-wide">
+                  <div class="mc-stats-wide">
+                    <div class="mc-stat-wide"><span class="mc-stat-val">28</span><span class="mc-stat-lbl">LEVEL</span>
+                    </div>
+                    <div class="mc-stat-wide"><span class="mc-stat-val">15</span><span class="mc-stat-lbl">DỰ ÁN</span>
+                    </div>
+                    <div class="mc-stat-wide"><span class="mc-stat-val">9,100</span><span class="mc-stat-lbl">EXP</span>
+                    </div>
+                  </div>
+                  <div class="mc-joined-wide">
+                    <span class="mc-joined-code">BCA001</span>
+                    <span class="mc-joined-date">01/2022</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mc-bottom-line"></div>
+            </div>
+
+            <div class="mcard mcard-wide hero-mcard hero-mcard-mt">
+              <div class="mc-inner-wide">
+                <div class="mc-top-row-wide">
+                  <div class="mc-avatar-wrap">
+                    <div class="mc-avatar">MT</div>
+                    <span class="mc-online"></span>
+                  </div>
+                  <div class="mc-info-wide">
+                    <div class="mc-name">Nguyễn Minh Triết</div>
+                    <div><span class="mc-role-badge">Designer</span></div>
+                  </div>
+                  <span class="mc-level">Lv24</span>
+                </div>
+                <div class="mc-skills-wide">
+                  <span class="mc-skill">UI/UX</span><span class="mc-skill">Figma</span><span
+                    class="mc-skill">Design</span>
+                </div>
+                <div class="mc-divider"></div>
+                <div class="mc-bottom-row-wide">
+                  <div class="mc-stats-wide">
+                    <div class="mc-stat-wide"><span class="mc-stat-val">24</span><span class="mc-stat-lbl">LEVEL</span>
+                    </div>
+                    <div class="mc-stat-wide"><span class="mc-stat-val">8</span><span class="mc-stat-lbl">DỰ ÁN</span>
+                    </div>
+                    <div class="mc-stat-wide"><span class="mc-stat-val">7,850</span><span class="mc-stat-lbl">EXP</span>
+                    </div>
+                  </div>
+                  <div class="mc-joined-wide">
+                    <span class="mc-joined-code">BCA002</span>
+                    <span class="mc-joined-date">06/2022</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mc-bottom-line"></div>
+            </div>
+
+            <div class="mcard mcard-wide hero-mcard hero-mcard-hk">
+              <div class="mc-inner-wide">
+                <div class="mc-top-row-wide">
+                  <div class="mc-avatar-wrap">
+                    <div class="mc-avatar">HK</div>
+                    <span class="mc-online is-online"></span>
+                  </div>
+                  <div class="mc-info-wide">
+                    <div class="mc-name">Trần Hoàng Khoa</div>
+                    <div><span class="mc-role-badge">Developer</span></div>
+                  </div>
+                  <span class="mc-level">Lv21</span>
+                </div>
+                <div class="mc-skills-wide">
+                  <span class="mc-skill">React</span><span class="mc-skill">NodeJS</span><span
+                    class="mc-skill">API</span>
+                </div>
+                <div class="mc-divider"></div>
+                <div class="mc-bottom-row-wide">
+                  <div class="mc-stats-wide">
+                    <div class="mc-stat-wide"><span class="mc-stat-val">21</span><span class="mc-stat-lbl">LEVEL</span>
+                    </div>
+                    <div class="mc-stat-wide"><span class="mc-stat-val">12</span><span class="mc-stat-lbl">DỰ ÁN</span>
+                    </div>
+                    <div class="mc-stat-wide"><span class="mc-stat-val">6,200</span><span class="mc-stat-lbl">EXP</span>
+                    </div>
+                  </div>
+                  <div class="mc-joined-wide">
+                    <span class="mc-joined-code">BCA003</span>
+                    <span class="mc-joined-date">09/2022</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mc-bottom-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="ticker">
+    <div class="tt" id="tt"></div>
+  </div>
+
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-split">
+        <!-- LEFT: text -->
+        <div class="rev">
+          <div class="eyebrow"><b>//</b> VỀ CHÚNG TÔI</div>
+          <h2 class="stitle">BCN không phải<br>CLB bình thường</h2>
+          <p class="about-manifesto">
+            Chúng tôi là <strong>Ban Công Nghệ</strong> — câu lạc bộ sinh viên trực thuộc Đoàn Khoa CNTT, <mark>Trường
+              Đại học Công Nghiệp TP.HCM</mark>. Không phải chỉ để học. Không phải chỉ để vui. Mà để <strong>xây dựng
+              thứ gì đó thực sự có giá trị.</strong>
+          </p>
+          <p class="about-manifesto">
+            Từ 2020, BCN đã tạo ra môi trường nơi sinh viên KTPM được làm dự án thực tế, cạnh tranh lành mạnh và cùng
+            nhau phát triển — bằng hệ thống gamification độc đáo mà không CLB nào khác có.
+          </p>
+          <div class="about-values">
+            <div class="vcrd">
+              <div class="vcrd-icon blue">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+              </div>
+              <div class="vcrd-t">Học qua thực chiến</div>
+              <div class="vcrd-d">Dự án thật, sản phẩm thật — không chỉ là bài tập lý thuyết.</div>
+            </div>
+            <div class="vcrd">
+              <div class="vcrd-icon purple">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7c6af7" stroke-width="2">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              </div>
+              <div class="vcrd-t">Level &amp; EXP System</div>
+              <div class="vcrd-d">Mỗi hoạt động tích điểm. Lên cấp, nhận rank, thăng hạng theo mùa.</div>
+            </div>
+            <div class="vcrd">
+              <div class="vcrd-icon green">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ec97d" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <div class="vcrd-t">Cộng đồng thực chất</div>
+              <div class="vcrd-d">Mentor, anh chị đi trước, mạng lưới cựu thành viên — hỗ trợ thật sự.</div>
+            </div>
+            <div class="vcrd">
+              <div class="vcrd-icon orange">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e0913a" stroke-width="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+              </div>
+              <div class="vcrd-t">BCN Cityscape</div>
+              <div class="vcrd-d">Thành phố thành viên — level cao hơn, tòa nhà lớn hơn. Độc nhất.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Manifest board / stats panel -->
+        <div class="about-board rev rev-delay-1">
+          <div class="ab-header">
+            <div class="ab-dots">
+              <div class="ab-dot red"></div>
+              <div class="ab-dot yellow"></div>
+              <div class="ab-dot green"></div>
+            </div>
+            <div class="ab-title">BCN · DASHBOARD · LIVE</div>
+          </div>
+          <div class="ab-body">
+
+            <!-- Stats row -->
+            <div class="ab-stats">
+              <div class="ab-stat">
+                <div class="ab-stat-n ct"><span id="ab1">150</span><span class="ab-stat-plus">+</span></div>
+                <div class="ab-stat-l">Thành Viên</div>
+              </div>
+              <div class="ab-stat">
+                <div class="ab-stat-n online"><span id="ab2">42</span></div>
+                <div class="ab-stat-l">Online Now</div>
+              </div>
+              <div class="ab-stat">
+                <div class="ab-stat-n gold"><span id="ab3">4</span></div>
+                <div class="ab-stat-l">Năm HĐ</div>
+              </div>
+            </div>
+
+            <!-- Role breakdown -->
+            <div class="ab-roles">
+              <div class="ab-role-title">ROLE DISTRIBUTION</div>
+              <div class="ab-role-row">
+                <span class="ab-role-lbl designer">Designer</span>
+                <div class="ab-role-bar">
+                  <div class="ab-role-fill designer" id="rbar1"></div>
+                </div>
+                <span class="ab-role-pct">38%</span>
+              </div>
+              <div class="ab-role-row">
+                <span class="ab-role-lbl developer">Developer</span>
+                <div class="ab-role-bar">
+                  <div class="ab-role-fill developer" id="rbar2"></div>
+                </div>
+                <span class="ab-role-pct">45%</span>
+              </div>
+              <div class="ab-role-row">
+                <span class="ab-role-lbl leader">Leader/PM</span>
+                <div class="ab-role-bar">
+                  <div class="ab-role-fill leader" id="rbar3"></div>
+                </div>
+                <span class="ab-role-pct">17%</span>
+              </div>
+            </div>
+
+            <!-- Season badge -->
+            <div class="ab-season">
+              <div class="ab-season-l">
+                <div class="ab-season-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c6af7" stroke-width="2">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="ab-season-name">Season 4 · 2024</div>
+                  <div class="ab-season-sub">12 dự án · 36 sự kiện</div>
+                </div>
+              </div>
+              <div class="ab-season-status">
+                <div class="pulse-dot"></div>
+                ACTIVE
+              </div>
+            </div>
+
+            <!-- Manifesto quote -->
+            <div class="ab-quote">
+              <div class="ab-quote-text">"Công nghệ không phải công cụ — là ngôn ngữ của thế hệ chúng tôi. BCN là nơi
+                chúng tôi học cách nói nó thật to."</div>
+              <div class="ab-quote-src">— BCN Core Team · 2024</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="stats-band">
+    <div class="stats-inner">
+      <div class="sstat">
+        <div class="sstat-num"><span id="s1">0</span><span class="sstat-suf">+</span></div>
+        <div class="sstat-lbl">Thành Viên</div>
+        <div class="sstat-sub">Tất cả thế hệ</div>
+      </div>
+      <div class="sstat">
+        <div class="sstat-num"><span id="s2">0</span></div>
+        <div class="sstat-lbl">Dự Án</div>
+        <div class="sstat-sub">Sản phẩm thực tế</div>
+      </div>
+      <div class="sstat">
+        <div class="sstat-num"><span id="s3">0</span><span class="sstat-suf">+</span></div>
+        <div class="sstat-lbl">Sự Kiện</div>
+        <div class="sstat-sub">Workshop &amp; Hackathon</div>
+      </div>
+      <div class="sstat">
+        <div class="sstat-num"><span id="s4">0</span><span class="sstat-suf">%</span></div>
+        <div class="sstat-lbl">Hài Lòng</div>
+        <div class="sstat-sub">Khảo sát nội bộ</div>
+      </div>
+      <div class="sstat">
+        <div class="sstat-num"><span id="s5">0</span></div>
+        <div class="sstat-lbl">Năm Hoạt Động</div>
+        <div class="sstat-sub">Thành lập 2020</div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <section class="proj-sec" id="projects">
+    <div class="wrap">
+      <div class="proj-header rev">
+        <div>
+          <div class="eyebrow"><b>//</b> DỰ ÁN TIÊU BIỂU</div>
+          <h2 class="stitle mb-0">Sản phẩm BCN xây dựng</h2>
+        </div>
+        <a href="#" class="link-more">
+          Xem tất cả dự án
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+      </div>
+      <div class="pgrid rev rev-delay-2">
+        <div class="pcrd feat">
+          <div class="pt feat-bg-1">
+            <div class="pt-grid"></div>
+            <div class="pt-feat-glow"></div>
+            <div class="pt-yr">2024</div>
+            <div class="pt-label">BCN<br>PLATFORM</div>
+          </div>
+          <div class="pb">
+            <div class="pn">BCN Member Platform</div>
+            <div class="pd">Hệ thống quản lý thành viên với gamification — bảng xếp hạng, nhiệm vụ, hồ sơ nhân vật, BCN
+              Cityscape. Nền tảng nội bộ toàn diện cho Ban Công Nghệ.</div>
+            <div class="pfoot">
+              <div class="pstack">
+                <span class="ptag">Next.js</span>
+                <span class="ptag">TypeScript</span>
+                <span class="ptag">Tailwind</span>
+              </div>
+              <a href="#" class="plink">
+                Xem thêm
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="pcrd">
+          <div class="pt feat-bg-2">
+            <div class="pt-grid"></div>
+            <div class="pt-yr">2023</div>
+            <div class="pt-label">KTPM<br>CONNECT</div>
+          </div>
+          <div class="pb">
+            <div class="pn">KTPM Connect</div>
+            <div class="pd">Ứng dụng kết nối sinh viên KTPM, chia sẻ tài liệu và thông báo nội bộ khoa IUH.</div>
+            <div class="pfoot">
+              <div class="pstack">
+                <span class="ptag">React</span>
+                <span class="ptag">Node.js</span>
+              </div>
+              <a href="#" class="plink">
+                Xem thêm
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="pcrd">
+          <div class="pt feat-bg-3">
+            <div class="pt-grid"></div>
+            <div class="pt-yr">2023</div>
+            <div class="pt-label">IUH<br>HACKATHON</div>
+          </div>
+          <div class="pb">
+            <div class="pn">Hackathon IUH 2023</div>
+            <div class="pd">Nền tảng tổ chức hackathon toàn trường — đăng ký đội, nộp bài và chấm điểm trực tuyến.</div>
+            <div class="pfoot">
+              <div class="pstack">
+                <span class="ptag">Vue.js</span>
+                <span class="ptag">Firebase</span>
+              </div>
+              <a href="#" class="plink">
+                Xem thêm
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="cap-sec" id="caps">
+    <div class="wrap">
+      <div class="rev cap-head">
+        <div class="eyebrow center"><b>//</b> NĂNG LỰC</div>
+        <h2 class="stitle">BCN có thể làm gì?</h2>
+        <p class="sdesc center">Từ pixel đến production — BCN đủ nhân lực và kỹ năng để hiện thực hoá bất kỳ ý tưởng
+          nào.</p>
+      </div>
+      <div class="cgrid rev rev-delay-2">
+        <div class="ccrd designer">
+          <div class="cico designer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7c6af7" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+          </div>
+          <div class="cnum">01 / DESIGN</div>
+          <div class="ctit">UI/UX &amp; Product Design</div>
+          <div class="cdesc">Thiết kế giao diện, trải nghiệm sản phẩm, design system và prototype tương tác cao.</div>
+          <div class="ctags">
+            <span class="ctag">Figma</span>
+            <span class="ctag">Adobe XD</span>
+            <span class="ctag">Prototyping</span>
+            <span class="ctag">Design System</span>
+          </div>
+        </div>
+        <div class="ccrd developer">
+          <div class="cico developer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34a8e0" stroke-width="2">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+          </div>
+          <div class="cnum">02 / DEV</div>
+          <div class="ctit">Frontend &amp; Backend</div>
+          <div class="cdesc">Web app hiện đại, API backend, database và triển khai production với tech stack mới nhất.
+          </div>
+          <div class="ctags">
+            <span class="ctag">React</span>
+            <span class="ctag">Next.js</span>
+            <span class="ctag">Node.js</span>
+            <span class="ctag">TypeScript</span>
+          </div>
+        </div>
+        <div class="ccrd leader">
+          <div class="cico leader">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e0913a" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <div class="cnum">03 / MANAGEMENT</div>
+          <div class="ctit">Project &amp; Community</div>
+          <div class="cdesc">Quản lý dự án Agile/Scrum, tổ chức sự kiện công nghệ, workshop và hackathon quy mô lớn.
+          </div>
+          <div class="ctags">
+            <span class="ctag">Scrum</span>
+            <span class="ctag">Agile</span>
+            <span class="ctag">Event Mgmt</span>
+            <span class="ctag">Mentoring</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="tl-sec" id="timeline">
+    <div class="tl-inner">
+      <div class="tl-head">
+        <div class="eyebrow center ct3"><b>//</b> HÀNH TRÌNH</div>
+        <h2 class="stitle ct">BCN đã đi qua</h2>
+      </div>
+      <div class="tl-items rev">
+        <div class="tli">
+          <div class="tli-dot"></div>
+          <div class="tli-yr">2020</div>
+          <div class="tli-t">Thành lập BCN</div>
+          <div class="tli-d">Nhóm sinh viên đam mê thành lập BCN với sứ mệnh tạo môi trường thực chiến cho KTPM IUH.
+          </div>
+          <div class="tli-badge">Khởi nguồn</div>
+        </div>
+        <div class="tli">
+          <div class="tli-dot"></div>
+          <div class="tli-yr">2021</div>
+          <div class="tli-t">3 Dự Án Đầu Tiên</div>
+          <div class="tli-d">45 thành viên, 3 dự án nội bộ. Xây dựng nền tảng hoạt động có cấu trúc lần đầu tiên.</div>
+          <div class="tli-badge">Cất cánh</div>
+        </div>
+        <div class="tli">
+          <div class="tli-dot"></div>
+          <div class="tli-yr">2022–23</div>
+          <div class="tli-t">Gamification Ra Đời</div>
+          <div class="tli-d">Tăng trưởng 200% thành viên. Hệ thống Level, EXP, Rank — BCN Cityscape lần đầu ra mắt.
+          </div>
+          <div class="tli-badge">Game hoá</div>
+        </div>
+        <div class="tli">
+          <div class="tli-dot live"></div>
+          <div class="tli-yr">2024</div>
+          <div class="tli-t">BCN Platform v1.0</div>
+          <div class="tli-d">Ra mắt nền tảng quản lý thành viên toàn diện — hồ sơ nhân vật, nhiệm vụ, Cityscape
+            real-time.</div>
+          <div class="tli-badge now">Hiện tại</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="join-sec" id="join">
+    <div class="wrap">
+      <div class="jgrid">
+        <div class="rev">
+          <div class="eyebrow"><b>//</b> THAM GIA BCN</div>
+          <h2 class="stitle">Bắt đầu hành trình<br>của bạn tại BCN</h2>
+          <p class="sdesc">Bạn là sinh viên KTPM tại IUH? Đây là cơ hội để làm dự án thực tế, tích lũy EXP và xây dựng
+            tòa nhà của riêng bạn trong thành phố BCN.</p>
+          <div class="perks">
+            <div class="perk">
+              <div class="perk-ico perk-ico-1">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="2">
+                  <path
+                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                </svg>
+              </div>
+              <div>
+                <div class="perk-t">Dự án thực tế ngay từ đầu</div>
+                <div class="perk-d">Tham gia làm sản phẩm từ ý tưởng đến production — không chỉ là lý thuyết.</div>
+              </div>
+            </div>
+            <div class="perk">
+              <div class="perk-ico perk-ico-2">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7c6af7" stroke-width="2">
+                  <path
+                    d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                </svg>
+              </div>
+              <div>
+                <div class="perk-t">Level lên mỗi ngày</div>
+                <div class="perk-d">Mọi hoạt động đều tích điểm EXP. Lên cấp, nhận rank, cạnh tranh top mùa.</div>
+              </div>
+            </div>
+            <div class="perk">
+              <div class="perk-ico perk-ico-3">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2ec97d" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <div>
+                <div class="perk-t">Mentor &amp; cộng đồng thật sự</div>
+                <div class="perk-d">Được dẫn dắt bởi anh chị đi trước, kết nối với cựu thành viên đang đi làm.</div>
+              </div>
+            </div>
+            <div class="perk">
+              <div class="perk-ico perk-ico-4">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d4a030" stroke-width="2">
+                  <circle cx="12" cy="8" r="6" />
+                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+                </svg>
+              </div>
+              <div>
+                <div class="perk-t">Được showcase &amp; vinh danh</div>
+                <div class="perk-d">Top member được featured, nhận certificate, cơ hội kết nối với doanh nghiệp partner.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rev rev-delay-1">
+          <div class="fcard">
+            <div class="fbody">
+              <div class="ft">Đăng ký tham gia BCN</div>
+              <div class="fs">Điền thông tin bên dưới — BTC sẽ liên hệ trong 48 giờ. Miễn phí, chỉ dành cho sinh viên
+                IUH.</div>
+              <div class="frow">
+                <div class="fg">
+                  <label class="fl">Họ và tên *</label>
+                  <input class="fi" type="text" placeholder="Nguyễn Văn A">
+                </div>
+                <div class="fg">
+                  <label class="fl">MSSV *</label>
+                  <input class="fi" type="text" placeholder="20XXXXXX">
+                </div>
+              </div>
+              <div class="fg">
+                <label class="fl">Email IUH *</label>
+                <input class="fi" type="email" placeholder="20xxxxxx@sv.iuh.edu.vn">
+              </div>
+              <div class="frow">
+                <div class="fg">
+                  <label class="fl">Năm học *</label>
+                  <select class="fsel">
+                    <option value="">Chọn năm</option>
+                    <option>Năm 1</option>
+                    <option>Năm 2</option>
+                    <option>Năm 3</option>
+                    <option>Năm 4</option>
+                  </select>
+                </div>
+                <div class="fg">
+                  <label class="fl">Vai trò muốn thử *</label>
+                  <select class="fsel">
+                    <option value="">Chọn vai trò</option>
+                    <option>Designer</option>
+                    <option>Developer</option>
+                    <option>Leader / PM</option>
+                    <option>Chưa xác định</option>
+                  </select>
+                </div>
+              </div>
+              <div class="fg">
+                <label class="fl">Tại sao muốn tham gia?</label>
+                <textarea class="fta" placeholder="Chia sẻ ngắn về động lực của bạn…"></textarea>
+              </div>
+              <button class="fsub" onclick="handleJoin()">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Gửi đăng ký
+              </button>
+              <div class="fnote">Chỉ dành cho sinh viên IUH · Hoàn toàn miễn phí</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div id="footer"></div>
+  <script src="./component/footer.js"></script>
+
+
+  <div class="floating-pet-agent" id="cyber-pet">
+    <div class="pet-bubble" id="pet-speech">> ZZZ...</div>
+    <div class="cyber-matrix-body">
+      <div class="eyes-layer">
+        <div class="cyber-eye" id="p-eye-l"></div>
+        <div class="cyber-eye" id="p-eye-r"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

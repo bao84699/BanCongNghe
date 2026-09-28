@@ -1,0 +1,143 @@
+﻿
+.project-card {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    box-shadow: 0px 2px 4px 0px rgba(201, 209, 232, 0.5);
+    border: 1px solid var(--border2);
+    background: var(--surface);
+    border-radius: 16px;
+    transition: box-shadow var(--trans), transform var(--trans);
+}
+
+.project-card:hover {
+    box-shadow: 0px 4px 16px 0px rgba(201, 209, 232, 0.8);
+    transform: translateY(-2px);
+}
+
+.project-card .thumbnail {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 138px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: var(--surface3);
+}
+
+.project-card .information {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project-card .information .title {
+    color: var(--text);
+    font-family: var(--font-d);
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.project-card .information .tag {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.project-card .tag .tag-temp {
+    padding: 5px 10px;
+    background: var(--surface2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-family: var(--font-b);
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--text-2);
+}
+
+.project-card .information .description {
+    color: var(--text-3);
+    font-family: var(--font-b);
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.project-card .information .participant-favourite {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.project-card .participant-favourite .participant {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+}
+
+.project-card .participant .user {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: var(--blue);
+}
+
+.project-card .participant .moreover {
+    width: 28px;
+    height: 26px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--surface2);
+    font-family: var(--font-b);
+    font-size: 11px;
+    color: var(--text-2);
+}
+
+.project-card .participant-favourite .favourite {
+    width: 37px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--text-3);
+    transition: color var(--trans);
+}
+
+.project-card .participant-favourite .favourite:hover {
+    color: var(--text);
+}
+
+
+/* =========================================
+   PROJECT LIST CONTAINER
+   ========================================= */
+.project-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+@media (max-width: 1024px) {
+    .project-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+}

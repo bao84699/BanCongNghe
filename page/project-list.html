@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/project-card.css">
+    <link rel="stylesheet" href="../css/project-list.css">
+    <title>Tất cả dự án</title>
+</head>
+<body>
+    <div id="header"></div>
+    <script src="../component/header.js"></script>
+    <main>
+        <section>
+            <div class="left">
+                <div class="description">
+                    <div class="kitu">//</div>
+                    <div class="text">DU AN.</div>
+                </div>
+                <div class="title">
+                    Dự án của BCN
+                </div>
+                <div class="information">
+                    khám phá những sản phẩm, dự án và hoạt động nổi bật được tạo ra bởi các thành viên của ban công nghệ.
+                </div>
+            </div>
+            <div class="right">
+                <div class="item">
+                    <div class="icon">
+                        <img src="/Images/ProjectList/section1/TongDuAn.svg" alt="">
+                    </div>
+                    <div class="number">42</div>
+                    <div class="descript">Tổng dự án</div>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <img src="/Images/ProjectList/section1/ThanhVien.svg" alt="">
+                    </div>
+                    <div class="number">156</div>
+                    <div class="descript">Thành viên tham gia</div>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <img src="/Images/ProjectList/section1/lich.svg" alt="">
+                    </div>
+                    <div class="number">2020</div>
+                    <div class="descript">Được bắt đầu</div>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <img src="/Images/ProjectList/section1/TongDuAn.svg" alt="">
+                    </div>
+                    <div class="number">12</div>
+                    <div class="descript">Dự án nổi bật</div>
+                </div>
+            </div>
+        </section>
+        <section class="filter">
+            <div class="filter-left">
+                <div class="item active">Tất cả</div>
+                <div class="item">Web</div>
+                <div class="item">Mobile</div>
+                <div class="item">UX/UI</div>
+                <div class="item">Game</div>
+                <div class="item">Tools</div>
+                <div class="item">Khác</div>
+            </div>
+            <div class="filter-right">
+                <select name="course" id="" class="course">
+                    <option value="all">Khoá: Tất cả</option>
+                </select>
+                <select name="years" id="" class="years">
+                    <option value="all">Năm: Tất cả</option>
+                </select>
+                <div class="search">
+                    <input type="text" name="" id="search" class="search-inp" placeholder="Tìm kiếm dự án ...">
+                    <label for="search">
+                        <i data-lucide="search"></i>
+                    </label>
+                </div>
+            </div>
+        </section>
+        <section class="project-list" id="projectList"></section>
+        <section class="pagination">
+            <div class="prev" id="prev">Trước</div>
+            <div class="page active">1</div>
+            <div class="page">2</div>
+            <div class="page">3</div>
+            <div class="next" id="next">Sau</div>
+        </section>
+    </main>
+    <footer>
+        <div id="footer"></div>
+        <script src="../component/footer.js"></script>
+    </footer>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../component/projectCard.js"></script>
+    <script src="../js/project-list.js"></script>
+</body>
+</html>

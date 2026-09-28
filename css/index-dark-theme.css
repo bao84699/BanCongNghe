@@ -1,0 +1,100 @@
+/* Dark Theme Overrides for Header and Footer on Homepage
+#footer {
+  --bg: #13131a;
+  --surface: #22232e;
+  --surface2: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #ffffff;
+  --text-2: rgba(255, 255, 255, 0.7);
+  --text-3: rgba(255, 255, 255, 0.4);
+  --accent: #ffffff;
+}
+
+/* =========================================
+   Hero Role Grid Cards (mc-inner-wide)
+   ========================================= */
+
+.hero-mcard {
+  position: relative;
+  width: 250px;
+  height: 122px;
+  background: rgba(0, 0, 0, 0.064) ;
+  backdrop-filter: blur(8px);
+}
+
+/* Phạm Quốc Bảo (QB) */
+.hero-mcard-qb {
+  --tier-fg: #e09020;
+  --tier-bg: rgba(220, 150, 40, 0.12);
+  --tier-border: rgba(220, 150, 40, 0.3);
+}
+
+.hero-mcard-qb .mc-avatar {
+  width: 36px;
+  height: 36px;
+  font-size: 12px;
+  background: rgba(220, 150, 40, 0.12);
+  color: #e09020;
+  border-color: #e09020;
+}
+
+.hero-mcard-qb .mc-bottom-line {
+  background: #e09020;
+}
+
+/* Nguyễn Minh Triết (MT) */
+.hero-mcard-mt {
+  --tier-fg: #a050db;
+  --tier-bg: rgba(150, 80, 220, 0.12);
+  --tier-border: rgba(150, 80, 220, 0.3);
+}
+
+.hero-mcard-mt .mc-avatar {
+  width: 36px;
+  height: 36px;
+  font-size: 12px;
+  background: rgba(150, 80, 220, 0.12);
+  color: #a050db;
+  border-color: #a050db;
+}
+
+.hero-mcard-mt .mc-bottom-line {
+  background: #a050db;
+}
+
+.hero-mcard-mt .mc-role-badge {
+  --badge-color: #a050db;
+}
+
+/* Trần Hoàng Khoa (HK) */
+.hero-mcard-hk {
+  --tier-fg: #00d4aa;
+  --tier-bg: rgba(0, 212, 170, 0.12);
+  --tier-border: rgba(0, 212, 170, 0.3);
+}
+
+.hero-mcard-hk .mc-avatar {
+  width: 36px;
+  height: 36px;
+  font-size: 12px;
+  background: rgba(0, 212, 170, 0.12);
+  color: #00d4aa;
+  border-color: #00d4aa;
+}
+
+.hero-mcard-hk .mc-bottom-line {
+  background: #00d4aa;
+}
+
+.hero-mcard-hk .mc-role-badge {
+  --badge-color: #00d4aa;
+}
+
+/* General overrides for hero cards */
+.hero-mcard .mc-name {
+  font-size: 13px;
+}
+
+.hero-mcard .mc-info-wide > div:not(.mc-name) {
+  margin-top: 2px;
+} */
