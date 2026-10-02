@@ -15,6 +15,11 @@ main {
     padding-bottom: 35px;
     background: var(--bg);
 }
+#introStatsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 section {
     width: 95%;
     max-width: 1200px;
@@ -216,5 +221,4 @@ label {
 .prev, .next {
     width: 80px;
 }
-
 

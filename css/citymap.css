@@ -1,241 +1,29 @@
-/* --- Hero Banner --- */
-.hero-banner {
-    position: relative;
-    padding: 24px 0 12px 0;
-    background: transparent;
+main {
+    padding-top: 40px;
 }
-.hero-bg {
-    display: none;
-}
-.hero-content {
-    position: relative; z-index: 2;
-    padding: 24px 0;
-}
-.hero-label {
-    font-family: var(--font-m); font-size: 11px;
-    letter-spacing: 0.1em; color: var(--text-3); margin-bottom: 8px;
-    font-weight: 500;
-}
-.hero-title {
-    font-family: var(--font-d);
-    font-size: 32px; font-weight: 800;
-    color: var(--text); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 8px;
-}
-.hero-sub {
-    font-family: var(--font-b);
-    font-size: 14px; color: var(--text-3);
-    max-width: 500px; line-height: 1.6;
-}
-.hero-stats { display:flex; align-items:center; gap:16px; }
-.stat-card {
-    background: var(--surface);
-    border-radius: 12px;
-    padding: 16px 20px;
+
+
+.citymap-section { 
+    padding-bottom: 80px; 
+    padding-top: 30px; 
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    min-width: 100px;
-    border: 1px solid var(--border2);
-}
-.stat-card .stat-n {
-    font-family: var(--font-d); font-size: 26px; font-weight: 800;
-    color: var(--text); line-height: 1;
-}
-.stat-card .stat-l {
-    font-size: 10px; color: var(--text-3);
-    font-family: var(--font-m); text-transform: uppercase; letter-spacing: 0.05em;
-    font-weight: 600;
 }
 
-
-/* --- Section & Filter --- */
-.citymap-section { background: var(--bg); padding-bottom: 80px; padding-top: 30px; }
-
-/* Wrapper căn giữa dùng chung cho filter và grid */
 .citymap-content {
-    margin: 0 auto;
     width: 100%;
     max-width: 1200px;
-    padding: 0 24px;
     box-sizing: border-box;
 }
 
 /* --- Filter Bar --- */
-.citymap-filter-bar {
-    background: var(--surface);
-    border: 1px solid var(--border2);
-    border-radius: 16px;
-    padding: 8px 14px;
-    margin: 20px 0 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    box-sizing: border-box;
-    width: 100%;
-}
-
-.cf-search {
-    position: relative;
-    display: flex;
-    align-items: center;
-    background: var(--surface2);
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    padding: 0 12px;
-    height: 36px;
-    flex: 2;
-    min-width: 180px;
-}
-
-.cf-search .search-icon {
-    width: 14px;
-    height: 14px;
-    color: var(--text-3);
-    margin-right: 8px;
-    flex-shrink: 0;
-}
-
-.cf-search input {
-    border: none;
-    background: transparent;
-    font-family: var(--font-b);
-    font-size: 12px;
-    color: var(--text);
-    outline: none;
-    width: 100%;
-}
-
-.cf-search input::placeholder {
-    color: var(--text-3);
-}
-
-.cf-divider {
-    width: 1px;
-    height: 20px;
-    background: var(--border2);
-    flex-shrink: 0;
-}
-
-.cf-group {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-shrink: 0;
-}
-
-.cf-label {
-    font-family: var(--font-m);
-    font-size: 8px;
-    color: var(--text-3);
-    letter-spacing: 0.1em;
-    margin-right: 4px;
-    text-transform: uppercase;
-}
-
-.cf-btn {
-    height: 30px;
-    padding: 0 14px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    background: var(--surface2);
-    font-size: 11px;
-    font-weight: 500;
-    font-family: var(--font-b);
-    color: var(--text-2);
-    cursor: pointer;
-    transition: background var(--trans), color var(--trans), border-color var(--trans);
-    white-space: nowrap;
-}
-
-.cf-btn:hover {
-    background: var(--surface3);
-    color: var(--text);
-    border-color: var(--border2);
-}
-
-.cf-btn.active {
-    background: var(--accent) !important;
-    border-color: var(--accent) !important;
-    color: var(--surface) !important;
-}
-
-.cf-sort {
-    position: relative;
-    display: flex;
-    align-items: center;
-    background: var(--surface2);
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    height: 36px;
-    padding: 0 12px;
-    flex-shrink: 0;
-}
-
-.cf-sort select {
-    border: none;
-    background: transparent;
-    font-family: var(--font-b);
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--text-2);
-    outline: none;
-    appearance: none;
-    padding-right: 18px;
-    cursor: pointer;
-}
-
-.cf-sort .chevron-icon {
-    position: absolute;
-    right: 10px;
-    width: 12px;
-    height: 12px;
-    color: var(--text-3);
-    pointer-events: none;
-}
-
-#cf-reset-btn {
-    height: 36px;
-    padding: 0 14px;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    background: var(--surface2);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 11px;
-    font-weight: 600;
-    font-family: var(--font-b);
-    color: var(--text-2);
-    cursor: pointer;
-    transition: background var(--trans), color var(--trans);
-    flex-shrink: 0;
-}
-
-#cf-reset-btn:hover {
-    background: var(--surface3);
-    color: var(--text);
-}
-
-#cf-reset-btn .reset-icon {
-    width: 12px;
-    height: 12px;
-}
-
-/* --- Grid wrapper --- */
 .citymap-wrap {
     width: 100%;
-    padding: 8px 0;
 }
 
-/* Grid container — absolute positioning, height set by JS */
 .citymap-grid {
     position: relative;
-    width: 100%;
-    min-height: 200px;
 }
 
 /* ===================================================
@@ -643,14 +431,4 @@
     font-size: 8px;
     color: rgba(255, 255, 255, 0.25);
     text-transform: uppercase;
-}
-
-
-/* Scroll on small screens */
-.citymap-wrap {
-    overflow-x: hidden;
-    width: 100%;
-}
-.citymap-grid {
-    width: 100%;
 }

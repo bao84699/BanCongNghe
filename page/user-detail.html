@@ -23,62 +23,6 @@
 
     <main>
         <div class="page">
-            <aside class="sidebar">
-                <a href="#" class="s-item on" onclick="activeSidebar(event,this)">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                        <circle cx="12" cy="7" r="4" />
-                    </svg>
-                    <div class="s-label"><b>PROFILE</b><small>Hồ sơ cá nhân</small></div>
-                </a>
-                <a href="#" class="s-item" onclick="activeSidebar(event,this)">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="3" width="7" height="7" />
-                        <rect x="14" y="3" width="7" height="7" />
-                        <rect x="14" y="14" width="7" height="7" />
-                        <rect x="3" y="14" width="7" height="7" />
-                    </svg>
-                    <div class="s-label"><b>PROJECTS</b><small>Dự án tham gia</small></div>
-                </a>
-                <a href="#" class="s-item" onclick="activeSidebar(event,this)">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon
-                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                    </svg>
-                    <div class="s-label"><b>ABILITY</b><small>Kỹ năng & năng lực</small></div>
-                </a>
-                <a href="#" class="s-item" onclick="activeSidebar(event,this)">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="8" r="6" />
-                        <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
-                    </svg>
-                    <div class="s-label"><b>ACHIEVEMENTS</b><small>Thành tích</small></div>
-                </a>
-                <a href="#" class="s-item" onclick="activeSidebar(event,this)">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path
-                            d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
-                    </svg>
-                    <div class="s-label"><b>MISSIONS</b><small>Nhiệm vụ</small></div>
-                </a>
-                <div class="sidebar-bottom">
-                    <div class="lv-label">Level</div>
-                    <div class="lv-num">24</div>
-                    <div class="lv-exp-label">7,850 / 10,000 EXP</div>
-                    <div class="lv-bar">
-                        <div class="lv-fill" id="lvFill"></div>
-                    </div>
-                    <div class="rank-row">
-                        <div class="rank-pip">
-                            <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor">
-                                <polygon
-                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                            </svg>
-                        </div>
-                        SILVER III
-                    </div>
-                </div>
-            </aside>
             <main class="main">
                 <div class="top-row">
                     <div class="card profile-card anim">
@@ -257,8 +201,8 @@
                         </a>
                     </div>
                 </div>
-
-                <div class="mid-row anim d2">
+                <div class="wrap">
+                    <div class="mid-row anim d2">
                     <div class="card">
                         <div class="card-head">
                             <div class="sec-label" style="margin-bottom:0;"><span>//</span> THÔNG TIN</div>
@@ -272,33 +216,24 @@
                                     <div class="cstat-label">LEVEL</div>
                                     <div class="cstat-val">24</div>
                                 </div>
-                                <div>
+                                <!-- <div>
                                     <div class="cstat-label">RANK</div>
                                     <div style="margin-top:4px;"><span class="silver-badge"><svg width="9" height="9"
                                                 viewBox="0 0 24 24" fill="currentColor">
                                                 <polygon
                                                     points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                                             </svg>Silver III</span></div>
-                                </div>
+                                </div> -->
                                 <div>
                                     <div class="cstat-label">JOINED</div>
-                                    <div class="cstat-val" style="font-size:14px;">08 / 2022</div>
-                                    <div style="font-size:10px;color:var(--text-3);margin-top:1px;">1 năm 9 tháng</div>
+                                    <div class="cstat-val">08 / 2022</div>
                                 </div>
                             </div>
                             <svg class="char-emblem-bg" viewBox="0 0 100 100" fill="none">
                                 <polygon points="50 5 61 35 92 35 67 57 76 88 50 70 24 88 33 57 8 35 39 35"
                                     stroke="currentColor" stroke-width="3" />
                             </svg>
-                        </div>
-                    </div>
-
-                    <!-- Specialization -->
-                    <div class="card">
-                        <div class="card-head">
-                            <div class="sec-label" style="margin-bottom:0;"><span>//</span> CHUYÊN MÔN</div>
-                        </div>
-                        <div class="spec-body">
+                            <div class="ts-label"> <span>//</span> CHUYÊN MÔN</div>
                             <div class="tag-wrap">
                                 <span class="tag" onclick="toast('UI/UX Design')">UI/UX Design</span>
                                 <span class="tag" onclick="toast('Figma')">Figma</span>
@@ -310,7 +245,7 @@
                                 <span class="tag" onclick="toast('JavaScript')">JavaScript</span>
                                 <span class="tag" onclick="toast('ReactJS')">ReactJS</span>
                             </div>
-                            <div class="ts-label">// CÔNG NGHỆ</div>
+                            <div class="ts-label"><span>//</span> CÔNG NGHỆ</div>
                             <div class="tech-grid">
                                 <div class="tech-item"><span class="tech-icon"></span>Figma</div>
                                 <div class="tech-item"><span class="tech-icon"></span>Adobe XD</div>
@@ -324,9 +259,17 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Specialization -->
+                    <!-- <div class="card">
+                        <div class="card-head">
+                            <div class="sec-label" style="margin-bottom:0;"><span>//</span> CHUYÊN MÔN</div>
+                        </div>
+                        <div class="spec-body">
 
+                        </div>
+                    </div> -->
                     <!-- Achievements -->
-                    <div class="card">
+                    <!-- <div class="card">
                         <div class="card-head">
                             <div class="sec-label" style="margin-bottom:0;"><span>//</span> THÀNH TỰU</div>
                         </div>
@@ -384,30 +327,21 @@
                                 <div class="ach-date">03/2024</div>
                             </div>
                         </div>
+                    </div> -->
                     </div>
-                </div>
-
-                <div class="card proj-card anim d3">
-                    <div class="proj-head">
-                        <div class="sec-label" style="margin-bottom:0;"><span>//</span> DỰ ÁN</div>
+                    <div class="card proj-card anim d3">
+                        <div class="proj-head">
+                            <div class="sec-label" style="margin-bottom:0;"><span>//</span> DỰ ÁN</div>
+                        </div>
+                        <section class="project-list col-3" id="projectList" style="padding: 5px;"></section>
                         <a href="#" class="see-all">
                             Xem tất cả dự án
-                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5">
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9" />
                             </svg>
                         </a>
                     </div>
-                    <section class="project-list" id="projectList" style="padding: 5px;"></section>
-                    <div class="proj-dots">
-                        <div class="pdot on" onclick="pickDot(this)"></div>
-                        <div class="pdot" onclick="pickDot(this)"></div>
-                        <div class="pdot" onclick="pickDot(this)"></div>
-                        <div class="pdot" onclick="pickDot(this)"></div>
-                    </div>
                 </div>
-
             </main>
         </div>
     </main>

@@ -323,12 +323,12 @@ function renderGrid() {
   }
 
   // Tính toán kích thước UNIT động dựa trên chiều rộng container
-  UNIT = Math.floor((containerWidth - (COLS - 1) * GAP) / COLS);
+  UNIT = ((containerWidth - (COLS - 1) * GAP) / COLS);
 
   // Giới hạn UNIT tối thiểu để tránh vỡ chữ trên màn hình quá nhỏ
   if (UNIT < 110) {
     COLS = Math.max(1, COLS - 1);
-    UNIT = Math.floor((containerWidth - (COLS - 1) * GAP) / COLS);
+    UNIT = ((containerWidth - (COLS - 1) * GAP) / COLS);
   }
 
   // Apply filters to MEMBERS

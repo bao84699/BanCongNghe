@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/project-card.css">
+    <link rel="stylesheet" href="../css/intro-stats.css">
     <link rel="stylesheet" href="../css/project-list.css">
     <title>Tất cả dự án</title>
 </head>
@@ -17,50 +18,7 @@
     <div id="header"></div>
     <script src="../component/header.js"></script>
     <main>
-        <section>
-            <div class="left">
-                <div class="description">
-                    <div class="kitu">//</div>
-                    <div class="text">DU AN.</div>
-                </div>
-                <div class="title">
-                    Dự án của BCN
-                </div>
-                <div class="information">
-                    khám phá những sản phẩm, dự án và hoạt động nổi bật được tạo ra bởi các thành viên của ban công nghệ.
-                </div>
-            </div>
-            <div class="right">
-                <div class="item">
-                    <div class="icon">
-                        <img src="/Images/ProjectList/section1/TongDuAn.svg" alt="">
-                    </div>
-                    <div class="number">42</div>
-                    <div class="descript">Tổng dự án</div>
-                </div>
-                <div class="item">
-                    <div class="icon">
-                        <img src="/Images/ProjectList/section1/ThanhVien.svg" alt="">
-                    </div>
-                    <div class="number">156</div>
-                    <div class="descript">Thành viên tham gia</div>
-                </div>
-                <div class="item">
-                    <div class="icon">
-                        <img src="/Images/ProjectList/section1/lich.svg" alt="">
-                    </div>
-                    <div class="number">2020</div>
-                    <div class="descript">Được bắt đầu</div>
-                </div>
-                <div class="item">
-                    <div class="icon">
-                        <img src="/Images/ProjectList/section1/TongDuAn.svg" alt="">
-                    </div>
-                    <div class="number">12</div>
-                    <div class="descript">Dự án nổi bật</div>
-                </div>
-            </div>
-        </section>
+        <div id="introStatsContainer"></div>
         <section class="filter">
             <div class="filter-left">
                 <div class="item active">Tất cả</div>
@@ -86,7 +44,7 @@
                 </div>
             </div>
         </section>
-        <section class="project-list" id="projectList"></section>
+        <section class="project-list col-4" id="projectList"></section>
         <section class="pagination">
             <div class="prev" id="prev">Trước</div>
             <div class="page active">1</div>
@@ -100,6 +58,7 @@
         <script src="../component/footer.js"></script>
     </footer>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../component/introStats.js"></script>
     <script src="../component/projectCard.js"></script>
     <script src="../js/project-list.js"></script>
 </body>
