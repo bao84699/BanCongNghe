@@ -1,5 +1,6 @@
-﻿
+
 .project-card {
+    min-width: 0; box-sizing: border-box;
     width: calc((100% - 22px * 3)/4);
     text-decoration: none;
     color: inherit;
@@ -14,10 +15,10 @@
     border-radius: 16px;
     transition: box-shadow var(--trans), transform var(--trans);
 }
-.col-4 .project-card {
+.col-4 .project-card { box-sizing: border-box;
     width: calc((100% - (22px * 3)) / 4);
 }
-.col-3 .project-card {
+.col-3 .project-card { box-sizing: border-box;
     width: calc((100% - (22px * 2)) / 3);
 }
 .project-card:hover {
@@ -125,6 +126,8 @@
 
 
 .project-list {
+    box-sizing: border-box;
+    min-width: 0; 
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -132,14 +135,23 @@
     gap: 22px;
 }
 
-@media (max-width: 1024px) {
-    .project-list {
-        grid-template-columns: repeat(2, 1fr);
+.hidden-card {
+    display: none !important;
+}
+
+.show-card {
+    animation: fadeSlideUp 0.4s ease forwards;
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media (max-width: 768px) {
-    .project-list {
-        grid-template-columns: 1fr;
-    }
-}
+.project-card > * { min-width: 0; }

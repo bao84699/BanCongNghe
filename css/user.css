@@ -726,8 +726,9 @@ span {
 /* ── MID ROW ── */
 .wrap {
     display: flex;
-    gap: 16px;
     flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
 }
 .mid-row {
     gap: 16px;
@@ -1147,7 +1148,10 @@ span {
     background: var(--accent);
     width: 18px;
 }
-
+.see-all svg {
+    width: 14px;
+    height: 14px;
+}
 @keyframes fadeUp {
 
     from {
@@ -1590,3 +1594,7 @@ button:focus-visible {
     }
 
 }
+.proj-card { min-width: 0; } .wrap > * { min-width: 0; }
+
+.wrap > .mid-row { width: 300px; flex-shrink: 0; }
+.wrap > .proj-card { flex: 1; min-width: 0; }
